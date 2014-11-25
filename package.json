@@ -1,0 +1,23 @@
+{
+  "name": "drpx-components",
+  "version": "0.0.1",
+  "description": "Helper AngularJS components for multiple projects",
+  "main": "README.md",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drpicox/drpx-components.git"
+  },
+  "keywords": [
+    "angularjs",
+    "components"
+  ],
+  "author": "https://github.com/drpicox/drpx-components.git",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drpicox/drpx-components/issues"
+  },
+  "homepage": "https://github.com/drpicox/drpx-components"
+}
