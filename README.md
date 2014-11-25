@@ -9,8 +9,8 @@ This repository contains some AngularJS components that I use in multiple projec
 Components
 ----------
 
+* [drpxClassRouteDirective](drpxClassRouteDirective.md)
 * [DrpxIfDirectiveSupport](DrpxIfDirectiveSupport.md)
-* [DrpxIfRouteDirective](DrpxIfRouteDirective.md)
-* [DrpxClassRouteDirective](DrpxClassRouteDirective.md)
+* [drpxIfRouteDirective](drpxIfRouteDirective.md)
 
 
