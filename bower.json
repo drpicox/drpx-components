@@ -1,0 +1,22 @@
+{
+  "name": "drpx-components",
+  "version": "0.0.1",
+  "authors": [
+    "David Rodenas <david.rodenas@gmail.com>"
+  ],
+  "description": "Helper AngularJS components for multiple projects",
+  "main": "README.md",
+  "keywords": [
+    "angularjs",
+    "components"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/drpicox/drpx-components",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
