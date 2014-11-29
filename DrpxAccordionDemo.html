@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>drpx-components - DrpxAccordion demo</title>
+</head>
+<body ng-app="drpx.accordion.demo">
+	<h2>DrpxAccordion demo</h2>
+
+	<div ng-controller="DrpxAccordionController as accordion">
+
+		A long time ago, in a galaxy far, far away....<br>
+
+		<ul>
+			<li>
+				<a href="#" ng-click="accordion.toggle('part1')">
+					Part 1
+				</a>
+				<p ng-show="accordion.is('part1')">
+					It is a period of civil war. Rebel<br>
+					spaceships, striking from a hidden<br>
+					base, have won their first victory<br>
+					against the evil Galactic Empire.<br>
+				</p>
+			</li>
+			<li>
+				<a href="#" ng-click="accordion.toggle('part2')">
+					Part 2
+				</a>
+				<p ng-show="accordion.is('part2')">
+					During the battle, rebel spies managed<br>
+					to steal secret plans to the Empire's<br>
+					ultimate weapon, the DEATH STAR, an<br>
+					armored space station with enough<br>
+					power to destroy an entire planet.<br>
+				</p>
+			</li>
+			<li>
+				<a href="#" ng-click="accordion.toggle('part3')">
+					Part 3
+				</a>
+				<p ng-show="accordion.is('part3')">
+					Pursued by the Empire's sinister agents,<br>
+					Princess Leia races home aboard her<br>
+					starship, custodian of the stolen plans<br>
+					that can save her people and restore<br>
+					freedom to the galaxy....<br>
+				</p>
+			</li>
+		</ul>
+
+		<button ng-click="accordion.hide()" ng-show="accordion.any()">
+			Close accordion.
+		</button>
+
+		<button ng-click="accordion.show('part1')">
+			Make sure part1 is open.
+		</button>
+
+	</div>
+
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="DrpxAccordionController.js"></script>
+	<script>
+		angular
+			.module('drpx.accordion.demo', [
+				'drpx.accordion'
+			]);
+	</script>
+
+</body>
+</html>
