@@ -12,30 +12,14 @@
 	'use strict';
 
 	angular
-		.module('drpx.toggle',[])
+		.module('drpx.toggle')
 		.controller('DrpxToggleController', DrpxToggleController);
 
 
-	function DrpxToggleController() {
-		this.active = false;
-	}
-
-	DrpxToggleController.prototype.hide = hide;
-	DrpxToggleController.prototype.is = is;
-	DrpxToggleController.prototype.show = show;
-	DrpxToggleController.prototype.toggle = toggle;
-
-	function hide() {
-		this.active = false;
-	}
-	function is() {
-		return this.active;
-	}
-	function show() {
-		this.active = true;
-	}
-	function toggle() {
-		this.active = !this.active;
+	DrpxToggleController.$inject = ['DrpxToggle'];
+	function DrpxToggleController  ( DrpxToggle ) {
+		DrpxToggle.call(this);
+		angular.extend(this, DrpxToggle.prototype);
 	}
 
 })(angular);

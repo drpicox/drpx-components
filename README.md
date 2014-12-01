@@ -9,11 +9,12 @@ This repository contains some AngularJS components that I use in multiple projec
 Components
 ----------
 
-* [DrpxAccordionController](DrpxAccordionController.md)
+* [DrpxAccordion](DrpxAccordion.md)
 * [drpxClassRouteDirective](drpxClassRouteDirective.md)
 * [DrpxIfDirectiveSupport](DrpxIfDirectiveSupport.md)
 * [drpxIfRouteDirective](drpxIfRouteDirective.md)
-* [DrpxToggleController](DrpxToggleController.md)
+* [DrpxSelectorModel](DrpxSelectorModel.md)
+* [DrpxToggle](DrpxToggle.md)
 
 
 How to run demos

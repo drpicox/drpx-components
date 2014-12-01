@@ -31,10 +31,10 @@ Examples
 
 ```javascript
 // or use it inside another controller
-MyController.$inject = ['$controller'];
-function MyController  ( $controller ) {
-    this.toggleRight = $controller('DrpxToggleController');
-    this.toggleLeft = $controller('DrpxToggleController');
+MyStuff.$inject = ['DrpxToggle'];
+function MyStuff  ( DrpxToggle ) {
+    this.toggleRight = new DrpxToggle();
+    this.toggleLeft = new DrpxToggle();
 }
 ```
 
@@ -51,7 +51,9 @@ Add the bower component `drpx-components`:
 Add the dependency to your `index.html`:
 
 ```html
+    <script src="bower_components/drpx-components/DrpxToggleModule.js"></script>
     <script src="bower_components/drpx-components/DrpxToggleController.js"></script>
+    <script src="bower_components/drpx-components/DrpxToggleModel.js"></script>
 ```
 
 Add the dependency to you `YourApp.js`:

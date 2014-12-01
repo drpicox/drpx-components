@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>drpx-components - DrpxToggle demo</title>
+</head>
+<body ng-app="drpx.toggle.demo">
+	<h2>DrpxToggle demo</h2>
+
+	<div ng-controller="DrpxToggleController as toggle">
+
+		A long time ago, in a galaxy far, far away....<br>
+
+		<button ng-click="toggle.toggle()">
+			Show/Hide
+		</button>
+		<div ng-show="toggle.is()">
+			This is the content <br>
+			of the toggle.
+		</div>
+
+		<br>
+		<button ng-click="toggle.show()">
+			Show toggle.
+		</button>
+		<button ng-click="toggle.hide()">
+			Hide toggle.
+		</button>
+
+	</div>
+
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="DrpxToggleModule.js"></script>
+	<script src="DrpxToggleController.js"></script>
+	<script src="DrpxToggleModel.js"></script>
+	<script>
+		angular
+			.module('drpx.toggle.demo', [
+				'drpx.toggle'
+			]);
+	</script>
+
+</body>
+</html>

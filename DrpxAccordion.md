@@ -56,11 +56,11 @@ Examples
 ```
 
 ```javascript
-// or use it inside another controller
-MyController.$inject = ['$controller'];
-function MyController  ( $controller ) {
-    this.accordionRight = $controller('DrpxAccordionController');
-    this.accordionLeft = $controller('DrpxAccordionController');
+// or use it as a model
+MyStuff.$inject = ['DrpxAccordion'];
+function MyStuff  ( DrpxAccordion ) {
+    this.accordionRight = new DrpxAccordion();
+    this.accordionLeft = new DrpxAccordion();
 }
 ```
 
@@ -77,7 +77,9 @@ Add the bower component `drpx-components`:
 Add the dependency to your `index.html`:
 
 ```html
+    <script src="bower_components/drpx-components/DrpxAccordionModule.js"></script>
     <script src="bower_components/drpx-components/DrpxAccordionController.js"></script>
+    <script src="bower_components/drpx-components/DrpxAccordionModel.js"></script>
 ```
 
 Add the dependency to you `YourApp.js`:

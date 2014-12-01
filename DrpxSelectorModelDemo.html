@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>drpx-components - DrpxSelector demo</title>
+</head>
+<body ng-app="drpx.selector.demo">
+	<h2>DrpxSelector demo</h2>
+
+	<div ng-controller="DemoController as demo">
+
+		<h3>Pick one</h3>
+		<div ng-repeat="value in demo.selector.values">
+			<button ng-click="demo.selector.show(value)">
+				{{value.label}}
+				<span ng-show="demo.selector.is(value)">*</span>
+			</button>
+		</div>
+		<h3>{{demo.selector.current.label}}</h3>
+		<div>
+			{{demo.selector.current.value}}
+		</div>
+
+	</div>
+
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="DrpxSelectorModel.js"></script>
+	<script>
+		angular
+			.module('drpx.selector.demo', [
+				'drpx.selector'
+			]).controller('DemoController', function(DrpxSelector) {
+				this.selector = new DrpxSelector();
+				this.selector.add({
+					id: 'colonial-one',
+					label: 'Colonial One',
+					value: 'Colonial One is a civilian starship that serves as the headquarters for the President of the Twelve Colonies.'
+				}, {
+					id: 'galactica',
+					label: 'Battlestar Galactica',
+					value: 'The Galactica is the last of the 12 original Battlestars from the first Cylon war.'
+				}, {
+					id: 'hitei-kan',
+					label: 'Hitei Kan',
+					value: 'Hitei Kan is the fleet\'s tylium processing ship and is one of the most important ships in the fleet.'
+				});
+				this.selector.show('colonial-one');
+			});
+	</script>
+
+</body>
+</html>
