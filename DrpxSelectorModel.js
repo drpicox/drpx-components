@@ -10,6 +10,8 @@
 *   .any(): boolean
 *   .hide()
 *   .is(value/id): boolean
+*   .next()
+*   .prev()
 *   .show(value/id)
 *   .toggle(value/id)
 */
@@ -33,8 +35,11 @@
 			this.add = add;
 			this.any = any;
 			this.hide = hide;
+			this.indexOf = indexOf;
 			this.is = is;
 			this.find = find;
+			this.next = next;
+			this.prev = prev;
 			this.show = show;
 			this.toggle = toggle;
 
@@ -47,18 +52,43 @@
 			function hide() {
 				this.current = false;
 			}
+			function indexOf(value) {
+				var i, l;
+
+				for (i = 0, l = this.values.length; i < l; i++) {
+					if (this.values[i] === value || this.values[i][options.key] === value) {
+						return i;
+					}
+				}
+				return -1;
+			}
 			function is(value) {
 				return this.current === value || this.current && this.current[options.key] === value;
 			}
 			function find(value) {
-				var i, l, current;
+				var idx;
 
-				for (i = 0, l = this.values.length; i < l; i++) {
-					if (this.values[i] === value || this.values[i][options.key] === value) {
-						return this.values[i];
-					}
+				idx = this.indexOf(value);
+				return this.values[idx] || false;
+			}
+			function next() {
+				var idx;
+
+				idx = this.values.indexOf(this.current);
+				idx = (idx + 1) % this.values.length;
+				this.current = this.values[idx];
+			}
+			function prev() {
+				var idx;
+
+				idx = this.values.indexOf(this.current);
+				if (idx > 0) {
+					idx = idx - 1;
+				} else {
+					idx = this.values.length - 1;
 				}
-				return false;
+				//idx = (idx + this.values.length - 1) % this.values.length;
+				this.current = this.values[idx];
 			}
 			function show(value) {
 				this.current = this.find(value);
