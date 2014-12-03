@@ -11,8 +11,8 @@
 		])
 		.directive('drpxIfRoute', drpxIfRoute);
 
-	drpxIfRoute.$inject = ['DrpIfDirectiveSupport','$location'];
-	function drpxIfRoute  ( DrpIfDirectiveSupport , $location ) {
+	drpxIfRoute.$inject = ['DrpxIfDirectiveSupport','$location'];
+	function drpxIfRoute  ( DrpxIfDirectiveSupport , $location ) {
 
 		var directive = {
 			restrict: 'A',
@@ -25,7 +25,7 @@
 
 		function link(scope, element, attr, ctrl, transclude) {
 
-			var ifSupport = new DrpIfDirectiveSupport({
+			var ifSupport = new DrpxIfDirectiveSupport({
 				element: element,
 				transclude: transclude,
 				comment: 'if-route'
