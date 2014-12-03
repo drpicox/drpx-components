@@ -13,8 +13,10 @@ Components
 * [drpxClassRouteDirective](drpxClassRouteDirective.md)
 * [DrpxIfDirectiveSupport](DrpxIfDirectiveSupport.md)
 * [drpxIfRouteDirective](drpxIfRouteDirective.md)
+* [DrpxSelectHtmlDirective](DrpxSelectHtmlDirective.md)
 * [DrpxSelectorModel](DrpxSelectorModel.md)
 * [DrpxToggle](DrpxToggle.md)
+* [DrpxUpdateService](DrpxUpdateService.md)
 
 
 How to run demos

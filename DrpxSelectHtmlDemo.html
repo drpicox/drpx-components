@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>drpx-components - DrpxSelectHtml demo</title>
+	<style>
+		drpx-select-html li.drpx-current {
+			background: red;
+		}
+	</style>
+</head>
+<body ng-app="drpx.selecthtml.demo">
+	<h2>DrpxSelectHtml demo</h2>
+
+	<div ng-controller="DemoController as demo">
+
+
+		Current: {{demo.current}}<br>
+		Options: {{demo.options}}<br>
+		<drpx-select-html ng-model="demo.current" data-options="option in demo.options">
+			<b>Select</b>: "{{option}}".
+		</drpx-select-html>
+
+		<button ng-click="demo.push()">push</button>
+		<button ng-click="demo.pop()">pop</button>
+		<button ng-click="demo.shift()">shift</button>
+
+		<select ng-model="demo.current" ng-options="option for option in demo.options"></select>
+
+	</div>
+
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="DrpxSelectHtmlDirective.js"></script>
+	<script>
+		angular
+			.module('drpx.selecthtml.demo', [
+				'drpx.selecthtml'
+			])
+			.controller('DemoController', function() {
+				var self = this;
+
+				self.current = null;
+				self.options = [1,2,3,4,5];
+
+				self.push = function() {
+					self.options.push(self.options.length+1);
+				};
+				self.pop = function() {
+					self.options.pop();
+				};
+				self.shift = function() {
+					self.options.shift();
+				};
+			});
+	</script>
+
+</body>
+</html>
