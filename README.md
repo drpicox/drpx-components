@@ -11,6 +11,7 @@ Components
 
 * [DrpxAccordion](DrpxAccordion.md)
 * [drpxClassRouteDirective](drpxClassRouteDirective.md)
+* [drpxClickScrollDirective](drpxClickScrollDirective.md)
 * [DrpxIfDirectiveSupport](DrpxIfDirectiveSupport.md)
 * [drpxIfRouteDirective](drpxIfRouteDirective.md)
 * [DrpxSelectHtmlDirective](DrpxSelectHtmlDirective.md)

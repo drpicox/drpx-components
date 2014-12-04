@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title>drpx-click-scroll demo</title>
+	<meta name="viewport" content="width=device-width"/>
+	<style>
+	html {
+		-ms-user-select: none;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		user-select: none;
+	}
+	[drpx-click-scroll] {
+		max-width: 500px;
+		height: 300px;
+		overflow: auto;
+		background: #efefef;
+	}
+	p.wide {
+		width: 150%;
+	}
+	</style>
+</head>
+<body ng-app="drpx.clickscroll.demo">
+
+	<h1>Drpx Click and Scroll demo</h1>
+	<div drpx-click-scroll>
+
+		<h2>A Princess of Mars</h2>
+		<small>Edgar Rice Burroughs</small>
+
+		<p>First there marched four officers of the jeddak's Guard bearing a huge salver on which reposed, upon a cushion of scarlet silk, a great golden chain with a collar and padlock at each end.  Directly behind these officers came four others carrying a similar salver which supported the magnificent ornaments of a prince and princess of the reigning house of Zodanga.</p>
+
+		<p>At the foot of the throne these two parties separated and halted, facing each other at opposite sides of the aisle.  Then came more dignitaries, and the officers of the palace and of the army, and finally two figures entirely muffled in scarlet silk, so that not a feature of either was discernible.  These two stopped at the foot of the throne, facing Than Kosis.  When the balance of the procession had entered and assumed their stations Than Kosis addressed the couple standing before him.  I could not hear his words, but presently two officers advanced and removed the scarlet robe from one of the figures, and I saw that Kantos Kan had failed in his mission, for it was Sab Than, Prince of Zodanga, who stood revealed before me.</p>
+
+		<p class="wide">Than Kosis now took a set of the ornaments from one of the salvers and placed one of the collars of gold about his son's neck, springing the padlock fast.  After a few more words addressed to Sab Than he turned to the other figure, from which the officers now removed the enshrouding silks, disclosing to my now comprehending view Dejah Thoris, Princess of Helium.</p>
+
+		<p>The object of the ceremony was clear to me; in another moment Dejah Thoris would be joined forever to the Prince of Zodanga.  It was an impressive and beautiful ceremony, I presume, but to me it seemed the most fiendish sight I had ever witnessed, and as the ornaments were adjusted upon her beautiful figure and her collar of gold swung open in the hands of Than Kosis I raised my long-sword above my head, and, with the heavy hilt, I shattered the glass of the great window and sprang into the midst of the astonished assemblage.  With a bound I was on the steps of the platform beside Than Kosis, and as he stood riveted with surprise I brought my long-sword down upon the golden chain that would have bound Dejah Thoris to another.</p>
+
+		<button ng-click="showNext=!showNext">Toggle next</button>
+	
+		<p ng-show="showNext">In an instant all was confusion; a thousand drawn swords menaced me from every quarter, and Sab Than sprang upon me with a jeweled dagger he had drawn from his nuptial ornaments.  I could have killed him as easily as I might a fly, but the age-old custom of Barsoom stayed my hand, and grasping his wrist as the dagger flew toward my heart I held him as though in a vise and with my long-sword pointed to the far end of the hall.</p>
+
+	</div>
+
+
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="drpxClickScrollDirective.js"></script>
+	<script>
+	angular
+		.module('drpx.clickscroll.demo', [
+			'drpx.clickscroll',
+		]);
+	</script>
+</body>
+</html>
