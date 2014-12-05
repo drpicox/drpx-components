@@ -1,6 +1,6 @@
 {
   "name": "drpx-components",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Helper AngularJS components for multiple projects",
   "main": "README.md",
   "scripts": {

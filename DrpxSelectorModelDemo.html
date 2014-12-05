@@ -35,21 +35,22 @@
 			.module('drpx.selector.demo', [
 				'drpx.selector'
 			]).controller('DemoController', function(DrpxSelector) {
-				this.selector = new DrpxSelector();
-				this.selector.add({
-					id: 'colonial-one',
-					label: 'Colonial One',
-					value: 'Colonial One is a civilian starship that serves as the headquarters for the President of the Twelve Colonies.'
-				}, {
-					id: 'galactica',
-					label: 'Battlestar Galactica',
-					value: 'The Galactica is the last of the 12 original Battlestars from the first Cylon war.'
-				}, {
-					id: 'hitei-kan',
-					label: 'Hitei Kan',
-					value: 'Hitei Kan is the fleet\'s tylium processing ship and is one of the most important ships in the fleet.'
+				this.selector = new DrpxSelector({
+					values: [{
+						id: 'colonial-one',
+						label: 'Colonial One',
+						value: 'Colonial One is a civilian starship that serves as the headquarters for the President of the Twelve Colonies.'
+					}, {
+						id: 'galactica',
+						label: 'Battlestar Galactica',
+						value: 'The Galactica is the last of the 12 original Battlestars from the first Cylon war.'
+					}, {
+						id: 'hitei-kan',
+						label: 'Hitei Kan',
+						value: 'Hitei Kan is the fleet\'s tylium processing ship and is one of the most important ships in the fleet.'
+					}],
+					current: 'galactica',
 				});
-				this.selector.show('colonial-one');
 			});
 	</script>
 

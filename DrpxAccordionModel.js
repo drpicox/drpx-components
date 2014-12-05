@@ -19,8 +19,9 @@
 
 	function drpxAccordionFactory() {
 
-		function DrpxAccordion() {
+		function DrpxAccordion(options) {
 			this.current = false;
+			angular.extend(this, options);
 		}
 
 		DrpxAccordion.prototype.any = any;

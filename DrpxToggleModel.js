@@ -2,7 +2,7 @@
 * Model of an toggle.
 * 
 * DrpxToggle()
-*	.active:  boolean
+*	.current:  boolean
 *   .hide()
 *   .is(): boolean
 *   .show()
@@ -16,8 +16,9 @@
 		.value('DrpxToggle', DrpxToggle);
 
 
-	function DrpxToggle() {
-		this.active = false;
+	function DrpxToggle(options) {
+		this.current = false;
+		angular.extend(this, options);
 	}
 
 	DrpxToggle.prototype.hide = hide;
@@ -26,16 +27,16 @@
 	DrpxToggle.prototype.toggle = toggle;
 
 	function hide() {
-		this.active = false;
+		this.current = false;
 	}
 	function is() {
-		return this.active;
+		return this.current;
 	}
 	function show() {
-		this.active = true;
+		this.current = true;
 	}
 	function toggle() {
-		this.active = !this.active;
+		this.current = !this.current;
 	}
 
 })(angular);
