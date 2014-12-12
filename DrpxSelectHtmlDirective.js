@@ -6,6 +6,7 @@
 		<drpx-select-html
 				ng-model="your.model"
 				data-options="option in your.options"
+				data-disable-option="cb(option)"
 				>
 			YourHtml{option}
 		</drpx-select-html>
@@ -20,8 +21,8 @@
 			</div>
 			<ul class="options" ng-show="visible">
 				<li 	ng-repeat="option in your.options"
-						ng-click="select(option)"
-						ng-class="{'drpx-current': your.model === option}">
+						ng-click="!disableOption(option) && select(option)"
+						ng-class="{'drpx-current': your.model === option, 'disabled': disableOption(option)}">
 					YourHtml{option}
 				</li>
 			</ul>
@@ -31,8 +32,8 @@
 		.module('drpx.selecthtml',[])
 		.directive('drpxSelectHtml', drpxSelectHtml);
 
-	drpxSelectHtml.$inject = ['$document'];
-	function drpxSelectHtml  ( $document ) {
+	drpxSelectHtml.$inject = ['$document','$parse'];
+	function drpxSelectHtml  ( $document , $parse ) {
 
 		var directive = {
 			restrict: 'E',
@@ -44,7 +45,7 @@
 		};
 
 		function link(scope, element, attr, ngModel, transclude) {
-			var collectionName, currentElement, currentScope, currentIdx, liElements, liScopes, match, optionName, ulElement, ulVisible;
+			var collectionName, currentElement, currentScope, currentIdx, disableOption, liElements, liScopes, match, optionName, ulElement, ulVisible;
 
 			match = attr.options.match(/\s*(\S+)\s+in\s+(.*)/);
 			if (!match) {
@@ -57,6 +58,7 @@
 			currentElement = angular.element('<div />');
 			currentElement.addClass('drpx-current');
 			currentElement.on('click', toggleUlVisibility);
+			disableOption = $parse(attr.disableOption);
 			transclude(transcludeCurrent);
 			element.append(currentElement);
 
@@ -83,12 +85,16 @@
 			}
 
 			function createLi(option) {
+				var disabled = disableOption(scope, {option: option});
+
 				transclude(function(clone, liScope) {
 					var liElement;
 
 					liElement = angular.element('<li>');
+					if (disabled) { liElement.addClass('disabled'); }
 					liElement.append(clone);
-					liElement.on('click', function() {
+					liElement.on('click', function(ev) {
+						if (disabled) { ev.stopPropagation(); return; }
 						selectOption(option);
 						scope.$apply();
 					});

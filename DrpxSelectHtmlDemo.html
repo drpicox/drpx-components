@@ -6,6 +6,9 @@
 		drpx-select-html li.drpx-current {
 			background: red;
 		}
+		.disabled {
+			color: gray;
+		}
 	</style>
 </head>
 <body ng-app="drpx.selecthtml.demo">
@@ -16,7 +19,9 @@
 
 		Current: {{demo.current}}<br>
 		Options: {{demo.options}}<br>
-		<drpx-select-html ng-model="demo.current" data-options="option in demo.options">
+		<drpx-select-html ng-model="demo.current" 
+				data-options="option in demo.options" 
+				data-disable-option="option % 2 === 1">
 			<b>Select</b>: "{{option}}".
 		</drpx-select-html>
 
