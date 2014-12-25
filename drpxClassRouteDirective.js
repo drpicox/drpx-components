@@ -57,6 +57,6 @@
 		}
 
 		return directive;
-
-	}]);
+	}
+	
 })(angular);
