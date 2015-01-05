@@ -51,7 +51,7 @@ Add the bower component `drpx-components`:
 Add the dependency to your `index.html`:
 
 ```html
-    <script src="bower_components/drpx-components/DrpxToggleModule.js"></script>
+    <script src="bower_components/drpx-components/drpxToggleModule.js"></script>
     <script src="bower_components/drpx-components/DrpxToggleController.js"></script>
     <script src="bower_components/drpx-components/DrpxToggleModel.js"></script>
 ```

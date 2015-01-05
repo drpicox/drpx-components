@@ -77,7 +77,7 @@ Add the bower component `drpx-components`:
 Add the dependency to your `index.html`:
 
 ```html
-    <script src="bower_components/drpx-components/DrpxAccordionModule.js"></script>
+    <script src="bower_components/drpx-components/drpxAccordionModule.js"></script>
     <script src="bower_components/drpx-components/DrpxAccordionController.js"></script>
     <script src="bower_components/drpx-components/DrpxAccordionModel.js"></script>
 ```
