@@ -17,7 +17,7 @@ Components
 * [DrpxSelectHtmlDirective](DrpxSelectHtmlDirective.md)
 * [DrpxSelectorModel](DrpxSelectorModel.md)
 * [DrpxToggle](DrpxToggle.md)
-* [DrpxUpdateService](DrpxUpdateService.md)
+* [drpxUpdateService](drpxUpdateService.md)
 
 
 How to run demos
