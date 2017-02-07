@@ -40,3 +40,7 @@ $ http-server -c-1 .
 Open demo.html in your current browser:
 
 - http://localhost:8080/demo.html
+
+## Demo
+
+[demo.html](./demo.html)
